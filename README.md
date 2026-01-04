@@ -16,6 +16,19 @@ El objetivo es demostrar la implementación práctica de **Pilas (LIFO)** y **Co
 * **Build Tool:** Maven.
 * **IDE:** IntelliJ IDEA.
 
+## Capturas de Pantalla
+
+|       Vista Principal (Modo Claro)        |          Modo Oscuro (Teal & Dark)          |
+|:-----------------------------------------:|:-------------------------------------------:|
+| ![Modo Claro](screenshots/modo-claro.png) | ![Modo Oscuro](screenshots/modo-oscuro.png) |
+
+|                         Agregar Tareas                          |         Selección de Elementos          |
+|:---------------------------------------------------------------:|:---------------------------------------:|
+|      ![Agregando Tareas](screenshots/agregando-tareas.png)      | ![Seleccion](screenshots/seleccion.png) |
+
+|                  Próxima Tarea                  |                  Sin Pendientes                   |
+|:-----------------------------------------------:|:-------------------------------------------------:|
+| ![Proxima Tarea](screenshots/proxima-tarea.png) | ![Sin Pendientes](screenshots/sin-pendientes.png) |
 
 ## Estructuras de Datos Implementadas
 
@@ -35,14 +48,18 @@ Este proyecto no utiliza listas simples. La lógica de negocio (`GestorTareas.ja
 5.  **Modo Oscuro:** Interfaz adaptable con paleta de colores Teal/Aqua.
 
 ## Cómo ejecutarlo
-
+### Clonación
 1.  Clonar el repositorio:
     ```bash
     git clone [https://github.com/](https://github.com/)[TU_USUARIO]/TaskFlow-FX.git
     ```
 2.  Abrir con **IntelliJ IDEA**.
 3.  Esperar a que Maven descargue las dependencias.
-4.  Ejecutar la clase `MainApp.java`.
+4.  Ejecutar la clase `Launcher.java`.
+
+### Ejecución portable 
+1. Descargar el archivo `TASKFLOW FX - GESTOR DE TAREAS.jar`
+2. Ejecutar el archivo
 
 ## Autor
 

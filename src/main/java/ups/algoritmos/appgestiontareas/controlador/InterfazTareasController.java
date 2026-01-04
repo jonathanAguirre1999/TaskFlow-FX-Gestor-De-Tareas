@@ -3,6 +3,9 @@ package ups.algoritmos.appgestiontareas.controlador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import ups.algoritmos.appgestiontareas.modelo.Tarea;
 
 public class InterfazTareasController {
@@ -10,11 +13,13 @@ public class InterfazTareasController {
     GestorTareas gestor = new GestorTareas();
 
     //ELEMENTOS DE LA GUI
+    @FXML private VBox contenedorPrincipal;
     @FXML private ListView <Tarea> listaPendientes;
     @FXML private ListView <Tarea> listaCompletadas;
     @FXML private TextField txtTitulo;
     @FXML private TextArea txtDescripcion;
-    @FXML private Label lblProxima;
+    @FXML private Button btnEliminar;
+    @FXML private ToggleButton btnModoOscuro;
 
     //INICIO DE GUI
     @FXML
@@ -30,6 +35,7 @@ public class InterfazTareasController {
             gestor.agregarTarea(titulo, descripcion);
             actualizarListas();
             txtTitulo.clear();
+            txtDescripcion.clear();
         }
     }
 
@@ -50,23 +56,37 @@ public class InterfazTareasController {
         Tarea t = gestor.verProximaTarea();
         if(t != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Próxima tarea");
-            alert.setHeaderText("A chambear");
-            alert.setContentText("Tu siguiente tarea a realizar es:\n" + t.toString());
+            alert.setTitle("A chambear");
+            alert.setHeaderText("Próxima tarea");
+            alert.setContentText("Tu siguiente tarea a realizar es: " + t.toString());
+
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
+
             alert.showAndWait();
         } else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Eres libre");
-            alert.setHeaderText("Sin tareas pendientes");
+            alert.setTitle("Sin tareas pendientes");
+            alert.setHeaderText("Eres libre");
             alert.setContentText
                     ("Has completado todas tus tareas pendientes, puedes descansar o agregar nuevas tareas");
+
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
+
             alert.showAndWait();
         }
     }
 
-    /*public void alternarModoOscuro(ActionEvent event){
-
-    }*/
+    public void alternarModoOscuro(ActionEvent event){
+        if(btnModoOscuro.isSelected()){
+            contenedorPrincipal.getStyleClass().add("dark-mode");
+            btnModoOscuro.setText("Modo Claro");
+        } else{
+            contenedorPrincipal.getStyleClass().remove("dark-mode");
+            btnModoOscuro.setText("Modo Oscuro");
+        }
+    }
 
 
     private void actualizarListas(){

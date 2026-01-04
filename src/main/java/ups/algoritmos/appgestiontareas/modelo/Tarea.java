@@ -45,7 +45,7 @@ public class Tarea {
     //TOSTRING
     @Override
     public String toString(){
-        return titulo + ": " + descripcion;
+        return titulo + "\n" + descripcion;
     }
 
     //-----------------------------METODOS ESPECIFICOS-------------------------------
