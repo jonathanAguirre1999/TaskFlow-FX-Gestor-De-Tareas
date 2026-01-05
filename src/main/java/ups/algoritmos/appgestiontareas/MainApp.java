@@ -21,7 +21,7 @@ public class MainApp extends Application {
        scene.getStylesheets().add(getClass().getResource
                ("/ups/algoritmos/appgestiontareas/vista/estilos.css").toExternalForm());
 
-       stage.setTitle("Gestor de Tareas");
+       stage.setTitle("TaskFlow FX - Gestor de Tareas");
        stage.getIcons().add(new Image(MainApp.class.getResourceAsStream("/images/icon.png")));
        stage.setScene(scene);
        stage.show();
