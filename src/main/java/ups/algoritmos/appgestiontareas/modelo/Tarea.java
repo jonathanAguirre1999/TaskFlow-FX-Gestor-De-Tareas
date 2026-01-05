@@ -34,10 +34,6 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public boolean isCompletada() {
-        return completada;
-    }
-
     public void setCompletada(boolean completada) {
         this.completada = completada;
     }
